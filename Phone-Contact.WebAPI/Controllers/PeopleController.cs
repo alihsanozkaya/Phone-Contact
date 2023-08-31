@@ -15,5 +15,19 @@ namespace Phone_Contact.WebAPI.Controllers
             _personService = personService;
 
         }
+
+
+        [HttpGet("/getAllPeople")]
+
+        public async Task<IActionResult> GetAll()
+        {
+            var result = await _personService.GetListAsync();
+            if (result ==null)
+            {
+                return BadRequest(string.Empty);    
+            }
+            return Ok(result);
+        }
+       
     }
 }
