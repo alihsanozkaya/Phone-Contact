@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Phone_Contact.Business.Abstract;
+using Phone_Contact.Business.Constants;
 using Phone_Contact.Core.Results;
 using Phone_Contact.DataAccess.Abstract;
 using Phone_Contact.Entities.Dtos.Person;
@@ -42,7 +43,21 @@ namespace Phone_Contact.Business.Concrete
             //Todo  : Automapper eklenecek
             // Dependency Injection olacak 
             //Todo : IDataResult tiplerine göre  DataResultlar döndürlecek
-            throw new NotImplementedException();
+            if (filter == null)
+            {
+                // Exception 
+                //throw new UnauthorizedAccessException("UnAuthorized"); 
+                var response = await _personRepository.GetListAsync();
+                var responseDetailDto = _mapper.Map<IEnumerable<PersonDetailDto>>(response);
+                return new SuccessDataResult<IEnumerable<PersonDetailDto>>(responseDetailDto, Messages.Listed);
+            }
+            else
+            {
+                var response = await _personRepository.GetListAsync(filter);
+                var responseDetailDto = _mapper.Map<IEnumerable<PersonDetailDto>>(response);
+                return new SuccessDataResult<IEnumerable<PersonDetailDto>>(responseDetailDto, Messages.Listed);
+            }
+
         }
 
         public Task<IDataResult<PersonUpdateDto>> UpdateAsync(PersonUpdateDto entity)

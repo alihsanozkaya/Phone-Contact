@@ -14,6 +14,6 @@ namespace Phone_Contact.Entities.Dtos.Person
         public string? MiddleName { get; set; }
         public string LastName { get; set; }
 
-        public List<Phone> Phones { get; set; }
+        //public List<Phone> Phones { get; set; }
     }
 }
