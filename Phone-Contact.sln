@@ -3,15 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33829.357
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Phone-Contact.Business", "Phone-Contact.Business\Phone-Contact.Business.csproj", "{67FB5DE5-7BDA-44B7-AF23-64D889F112B3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Phone-Contact.Business", "Phone-Contact.Business\Phone-Contact.Business.csproj", "{67FB5DE5-7BDA-44B7-AF23-64D889F112B3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Phone-Contact.Core", "Phone-Contact.Core\Phone-Contact.Core.csproj", "{46EC2E25-C5AB-41FF-AF78-550149463DB5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Phone-Contact.DataAccess", "Phone-Contact.DataAccess\Phone-Contact.DataAccess.csproj", "{378EBB5A-E898-42F2-9D3E-174D4855E3CC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Phone-Contact.DataAccess", "Phone-Contact.DataAccess\Phone-Contact.DataAccess.csproj", "{378EBB5A-E898-42F2-9D3E-174D4855E3CC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Phone-Contact.Entities", "Phone-Contact.Entities\Phone-Contact.Entities.csproj", "{1428AA54-F451-401F-87BD-CE0B1AC8C899}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Phone-Contact.Entities", "Phone-Contact.Entities\Phone-Contact.Entities.csproj", "{1428AA54-F451-401F-87BD-CE0B1AC8C899}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Phone-Contact.WebAPI", "Phone-Contact.WebAPI\Phone-Contact.WebAPI.csproj", "{C700634C-B8A8-4994-ACF0-13F08BBFF66B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Phone-Contact.WebAPI", "Phone-Contact.WebAPI\Phone-Contact.WebAPI.csproj", "{C700634C-B8A8-4994-ACF0-13F08BBFF66B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Phone-Contact.Core", "Phone-Contact.Core\Phone-Contact.Core.csproj", "{6C9A464C-CE71-4F6B-8C87-A796D0D7169F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,6 @@ Global
 		{67FB5DE5-7BDA-44B7-AF23-64D889F112B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{67FB5DE5-7BDA-44B7-AF23-64D889F112B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{67FB5DE5-7BDA-44B7-AF23-64D889F112B3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{46EC2E25-C5AB-41FF-AF78-550149463DB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{46EC2E25-C5AB-41FF-AF78-550149463DB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{46EC2E25-C5AB-41FF-AF78-550149463DB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{46EC2E25-C5AB-41FF-AF78-550149463DB5}.Release|Any CPU.Build.0 = Release|Any CPU
 		{378EBB5A-E898-42F2-9D3E-174D4855E3CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{378EBB5A-E898-42F2-9D3E-174D4855E3CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{378EBB5A-E898-42F2-9D3E-174D4855E3CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -39,6 +35,10 @@ Global
 		{C700634C-B8A8-4994-ACF0-13F08BBFF66B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C700634C-B8A8-4994-ACF0-13F08BBFF66B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C700634C-B8A8-4994-ACF0-13F08BBFF66B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C9A464C-CE71-4F6B-8C87-A796D0D7169F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C9A464C-CE71-4F6B-8C87-A796D0D7169F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C9A464C-CE71-4F6B-8C87-A796D0D7169F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C9A464C-CE71-4F6B-8C87-A796D0D7169F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
