@@ -1,5 +1,7 @@
+using Autofac;
 using Autofac.Extensions.DependencyInjection;
 using AutoMapper;
+using Phone_Contact.Business.DependencyResolvers.Autofac;
 using Phone_Contact.Business.Mappings;
 using Phone_Contact.DataAccess.Abstract;
 using Phone_Contact.DataAccess.Concrete;
@@ -20,6 +22,11 @@ builder.Services.AddSingleton(mapper);
 
 #region Autofac
 builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
+
+
+// Register services directly with Autofac here. Don't
+// call builder.Populate(), that happens in AutofacServiceProviderFactory.
+builder.Host.ConfigureContainer<ContainerBuilder>(builder => builder.RegisterModule(new AutofacBusinessModule()));
 #endregion
 
 builder.Services.AddControllers();
