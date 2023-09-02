@@ -19,6 +19,5 @@
         }
         public bool Success { get; }
         public string Message { get; }
-
     }
 }
