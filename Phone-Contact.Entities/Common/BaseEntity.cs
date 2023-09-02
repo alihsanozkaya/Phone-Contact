@@ -13,11 +13,11 @@ namespace Phone_Contact.Entities.Common
         [Key]
         public int Id { get; set; }
 
-        public DateTime CreatedDate { get; set; }
+        public DateTime CreatedDate { get; set; } = DateTime.UtcNow;
 
         public int CreatedBy { get; set; } = 1;
-        public DateTime UpdatedDate { get; set; }
+        public DateTime? UpdatedDate { get; set; } 
 
-        public int UpdatedBy { get; set; } = 1;
+        public int? UpdatedBy { get; set; } = 1;
     }
 }

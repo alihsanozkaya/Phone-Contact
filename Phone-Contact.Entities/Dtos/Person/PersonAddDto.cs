@@ -1,4 +1,5 @@
-﻿using Phone_Contact.Entities.Entities;
+﻿using Phone_Contact.Entities.Dtos.Phone;
+using Phone_Contact.Entities.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +15,6 @@ namespace Phone_Contact.Entities.Dtos.Person
         public string? MiddleName { get; set; }
         public string LastName { get; set; }
 
-        //public List<Phone> Phones { get; set; }
+        public List<PhoneDto> Phones { get; set; }
     }
 }

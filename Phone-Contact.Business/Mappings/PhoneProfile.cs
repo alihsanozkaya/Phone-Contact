@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using Phone_Contact.Entities.Dtos.Phone;
+using Phone_Contact.Entities.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,15 +16,16 @@ namespace Phone_Contact.Business.Mappings
         public PhoneProfile()
         {
 
-            //CreateMap<, Category>();
-            //CreateMap<Category, CategoryAddDto>();
+            CreateMap<PhoneAddDto, Phone>();
+            CreateMap<Phone, PhoneAddDto>();
 
-            //CreateMap<CategoryUpdateDto, Category>();
-            //CreateMap<Category, CategoryUpdateDto>();
+            CreateMap<PhoneUpdateDto, Phone>();
+            CreateMap<Phone, PhoneUpdateDto>();
 
-            //CreateMap<CategoriesDto, Category>();
-            //CreateMap<Category, CategoriesDto>();
-
+            CreateMap<PhoneDetailDto, Phone>();
+            CreateMap<Phone, PhoneDetailDto>();
+            CreateMap<PhoneDto, Phone>();
+            CreateMap<Phone, PhoneDto>();
         }
     }
 }

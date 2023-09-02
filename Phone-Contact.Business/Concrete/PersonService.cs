@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace Phone_Contact.Business.Concrete
@@ -23,19 +24,32 @@ namespace Phone_Contact.Business.Concrete
             _mapper = mapper;
             _personRepository = personRepository;
          }
-        public Task<IDataResult<PersonDto>> AddAsync(PersonAddDto entity)
+        public async Task<IDataResult<PersonDto>> AddAsync(PersonAddDto entity)
         {
-            throw new NotImplementedException();
+            var person = _mapper.Map<Person>(entity);
+
+            var personAdd = await _personRepository.AddAsync(person);
+            var personDto = _mapper.Map<PersonDto>(personAdd);
+
+            return new SuccessDataResult<PersonDto>(personDto, Messages.Added);
         }
 
-        public Task<IDataResult<bool>> DeleteAsync(int id)
-        {
-            throw new NotImplementedException();
+        public async Task<IDataResult<bool>> DeleteAsync(int id)
+        {   
+
+            var isDelete = await _personRepository.DeleteAsync(id);
+            return new SuccessDataResult<bool>(isDelete,Messages.Deleted);
         }
 
-        public Task<IDataResult<PersonDto>> GetAsync(Expression<Func<Person, bool>> filter)
+        public async Task<IDataResult<PersonDto>> GetAsync(Expression<Func<Person, bool>> filter)
         {
-            throw new NotImplementedException();
+                var person = await _personRepository.GetAsync(filter);
+                if (person == null)
+                {
+                        return new ErrorDataResult<PersonDto>(null,Messages.NotListed);
+                }
+                var personDto = _mapper.Map<PersonDto>(person);
+                return new SuccessDataResult<PersonDto>(personDto);
         }
 
         public async Task<IDataResult<IEnumerable<PersonDetailDto>>> GetListAsync(Expression<Func<Person, bool>> filter = null)
@@ -60,9 +74,17 @@ namespace Phone_Contact.Business.Concrete
 
         }
 
-        public Task<IDataResult<PersonUpdateDto>> UpdateAsync(PersonUpdateDto entity)
-        {
-            throw new NotImplementedException();
+        public async Task<IDataResult<PersonUpdateDto>> UpdateAsync(PersonUpdateDto entity)
+        {   
+
+            var getPerson = await _personRepository.GetAsync(x  => x.Id == entity.Id);
+            var person = _mapper.Map<Person>(entity);
+
+            person.UpdatedDate = DateTime.UtcNow;
+            person.UpdatedBy = 1;
+
+            var personUpdateDto = _mapper.Map<PersonUpdateDto>(person);
+            return new SuccessDataResult<PersonUpdateDto>(personUpdateDto, Messages.Updated);
         }
     }
 }

@@ -19,6 +19,14 @@ namespace Phone_Contact.Business.Mappings
             CreateMap<PersonDetailDto, Person>();
             CreateMap<Person, PersonDetailDto>();
 
+            CreateMap<PersonAddDto, Person>();
+            CreateMap<Person, PersonAddDto>();
+
+            CreateMap<PersonUpdateDto, Person>();
+            CreateMap<Person, PersonUpdateDto>();
+
+            CreateMap<PersonDto, Person>();
+            CreateMap<Person, PersonDto>();
             //CreateMap<CategoryUpdateDto, Category>();
             //CreateMap<Category, CategoryUpdateDto>();
 
